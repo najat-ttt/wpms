@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Public user profile info",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "WeddingProfile": {
+      "title": "Wedding Profile",
+      "description": "Details about the wedding",
+      "type": "object",
+      "properties": {
+        "brideName": { "type": "string", "maxLength": 100 },
+        "groomName": { "type": "string", "maxLength": 100 },
+        "date": { "type": "string" },
+        "location": { "type": "string", "maxLength": 200 },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["brideName", "groomName"]
+    },
+    "Task": {
+      "title": "Task",
+      "description": "A wedding preparation task",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["pending", "completed"] },
+        "dueDate": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "status", "createdAt"]
+    },
+    "Vendor": {
+      "title": "Vendor",
+      "description": "A wedding vendor",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 100 },
+        "contact": { "type": "string", "maxLength": 200 },
+        "status": { "type": "string", "enum": ["pending", "hired", "rejected"] },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "category", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profiles"
+    },
+    "users/{userId}/wedding/profile": {
+      "schema": { "$ref": "#/entities/WeddingProfile" },
+      "description": "User's wedding profile"
+    },
+    "users/{userId}/tasks/{taskId}": {
+      "schema": { "$ref": "#/entities/Task" },
+      "description": "User's tasks"
+    },
+    "users/{userId}/vendors/{vendorId}": {
+      "schema": { "$ref": "#/entities/Vendor" },
+      "description": "User's vendors"
+    }
+  }
+}
