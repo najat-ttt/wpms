@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Profile - WPMS</title>
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" href="/src/css/components.css">
+</head>
+<body>
+  <div class="app-layout">
+    <main class="app-main">
+      <div class="app-content">
+        
+        <div id="alert-container"></div>
+        
+        <div id="loading-state" class="card" style="text-align: center; padding: 3rem;">
+          <p style="color: var(--color-text-secondary);">Loading profile...</p>
+        </div>
+        
+        <div id="empty-state" class="card hidden" style="text-align: center; padding: 4rem 2rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.5rem;">Let's start planning</h2>
+          <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Create your wedding profile to keep all your details in one place.</p>
+          <button id="btn-create-profile" class="btn btn-primary">Create Wedding Profile</button>
+        </div>
+
+        <div id="view-state" class="card hidden">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+            <div>
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted);">Wedding Details</span>
+              <h3 id="display-couple-names" style="font-size: 2rem; font-family: var(--font-family-heading); margin-top: 0.5rem; color: var(--color-text-primary);">Couple Names</h3>
+            </div>
+            <button id="btn-edit-profile" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 1rem;">Edit</button>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <div>
+              <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 0.25rem;">Date</p>
+              <p id="display-date" style="font-weight: 500;">-</p>
+            </div>
+            <div>
+              <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 0.25rem;">Venue</p>
+              <p id="display-venue" style="font-weight: 500;">-</p>
+            </div>
+          </div>
+          
+          <div>
+            <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 0.25rem;">Description</p>
+            <p id="display-description" style="line-height: 1.6;">-</p>
+          </div>
+        </div>
+        
+        <div id="edit-state" class="card hidden" style="max-width: 600px;">
+          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-family-heading); font-size: 1.5rem;">Wedding Profile</h3>
+          <form id="profile-form">
+            <div class="form-group">
+              <label for="coupleNames" class="form-label">Couple Names *</label>
+              <input type="text" id="coupleNames" class="form-control" placeholder="e.g., Sarah & Mark" required>
+            </div>
+            <div class="form-group">
+              <label for="weddingDate" class="form-label">Wedding Date *</label>
+              <input type="date" id="weddingDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="venue" class="form-label">Venue *</label>
+              <input type="text" id="venue" class="form-control" placeholder="e.g., The Grand Pavilion" required>
+            </div>
+            <div class="form-group">
+              <label for="description" class="form-label">Description</label>
+              <textarea id="description" class="form-control" rows="4" placeholder="Brief description of your wedding..."></textarea>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+              <button type="submit" class="btn btn-primary" id="btn-save">Save Profile</button>
+              <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/src/js/pages/wedding-profile.js"></script>
+</body>
+</html>

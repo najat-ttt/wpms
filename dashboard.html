@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - WPMS</title>
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" href="/src/css/components.css">
+</head>
+<body>
+  <div class="app-layout">
+    <main class="app-main">
+      <div class="app-content">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg); gap: var(--spacing-sm);">
+          <h2 style="margin: 0; font-family: var(--font-family-heading);">Overview</h2>
+          <div style="display: flex; gap: var(--spacing-sm);">
+            <a href="/wedding-profile.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">Edit Profile</a>
+            <a href="/tasks.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">Add Task</a>
+            <a href="/vendors.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">Add Vendor</a>
+          </div>
+        </div>
+
+        <!-- Profile Summary -->
+        <div class="card" style="margin-bottom: var(--spacing-xl); background-color: var(--color-surface-muted); border: none;">
+          <div id="profile-summary">
+            <p style="color: var(--color-text-secondary);">Loading profile...</p>
+          </div>
+        </div>
+        
+        <h3 style="font-family: var(--font-family-heading); font-size: 1.1rem; margin-bottom: var(--spacing-md);">Statistics</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-xl);">
+          <div class="card" style="padding: var(--spacing-lg); text-align: center;">
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Total Tasks</p>
+            <h4 id="stat-total" style="font-size: 2rem; margin: 0; color: var(--color-text-primary);">0</h4>
+            <div class="progress-bar-container">
+              <div id="task-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+            <p id="task-progress-text" style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-text-secondary);">0 / 0 Completed</p>
+          </div>
+          <div class="card" style="padding: var(--spacing-lg); text-align: center;">
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Completed</p>
+            <h4 id="stat-completed" style="font-size: 2rem; margin: 0; color: var(--color-success);">0</h4>
+          </div>
+          <div class="card" style="padding: var(--spacing-lg); text-align: center;">
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Pending</p>
+            <h4 id="stat-pending" style="font-size: 2rem; margin: 0; color: var(--color-text-primary);">0</h4>
+          </div>
+          <div class="card" style="padding: var(--spacing-lg); text-align: center;">
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Overdue Tasks</p>
+            <h4 id="stat-overdue" style="font-size: 2rem; margin: 0; color: var(--color-danger);">0</h4>
+          </div>
+          <div class="card" style="padding: var(--spacing-lg); text-align: center;">
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Total Vendors</p>
+            <h4 id="stat-vendor-total" style="font-size: 2rem; margin: 0; color: var(--color-text-primary);">0</h4>
+          </div>
+          <div class="card" style="padding: var(--spacing-lg); text-align: center;">
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Estimated Cost</p>
+            <h4 id="stat-vendor-cost" style="font-size: 2rem; margin: 0; color: var(--color-success);">$0</h4>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-xl);">
+          <div class="card" style="display: flex; flex-direction: column;">
+            <h3 style="font-family: var(--font-family-heading); font-size: 1.1rem; margin-bottom: var(--spacing-md);">Upcoming Tasks</h3>
+            <div id="upcoming-tasks-list" class="mini-task-list" style="flex: 1;">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          
+          <div class="card" style="display: flex; flex-direction: column;">
+            <h3 style="font-family: var(--font-family-heading); font-size: 1.1rem; margin-bottom: var(--spacing-md); color: var(--color-danger);">Overdue Tasks</h3>
+            <div id="overdue-tasks-list" class="mini-task-list" style="flex: 1;">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/src/js/pages/dashboard.js"></script>
+</body>
+</html>
