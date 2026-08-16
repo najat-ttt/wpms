@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Wedding Planning Management System</title>
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" href="/src/css/components.css">
+</head>
+<body>
+  <div class="auth-layout">
+    <div class="card auth-card">
+      <div class="sidebar-brand" style="justify-content: center; margin-bottom: 1rem;">
+        <div class="brand-logo">W</div>
+        <h1 class="page-title" style="margin-bottom: 0;">WPMS</h1>
+      </div>
+      <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">Create a new account</p>
+      
+      <div id="error-message" class="alert alert-danger hidden"></div>
+      
+      <form id="register-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" required autocomplete="email">
+        </div>
+        
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" required autocomplete="new-password">
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" id="confirmPassword" class="form-control" required autocomplete="new-password">
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top: 1rem;" id="submit-btn">Register</button>
+      </form>
+      
+      <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;">
+        Already have an account? <a href="/index.html">Sign In</a>
+      </p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/pages/register.js"></script>
+</body>
+</html>
