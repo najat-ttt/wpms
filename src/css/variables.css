@@ -1,0 +1,47 @@
+:root {
+  /* Colors */
+  --color-primary: #393433; /* Dark taupe/stone */
+  --color-primary-light: #575250;
+  --color-primary-dark: #221F1F;
+  --color-accent: #E6E3DF;
+  
+  --color-background: #FDFBF9; /* Warm off-white */
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F5F3EF; /* Slightly deeper warm white */
+  
+  --color-text-primary: #292524;
+  --color-text-secondary: #78716C;
+  --color-text-muted: #A8A29E;
+  
+  --color-border: #EAE6E2;
+  --color-border-hover: #D6D2CE;
+  
+  --color-success: #2A6845; /* Deeper, muted green */
+  --color-danger: #9F1239; /* Muted rose */
+  --color-warning: #92400E;
+  
+  /* Typography */
+  --font-family-base: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-family-heading: "Playfair Display", Georgia, serif;
+  
+  /* Sizing & Spacing */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  --spacing-xxl: 4rem;
+  
+  /* Shadows - Diffused & subtle */
+  --shadow-sm: 0 1px 2px rgba(41, 37, 36, 0.04);
+  --shadow-md: 0 4px 12px rgba(41, 37, 36, 0.03), 0 2px 4px rgba(41, 37, 36, 0.02);
+  --shadow-lg: 0 12px 24px rgba(41, 37, 36, 0.04), 0 4px 8px rgba(41, 37, 36, 0.02);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
